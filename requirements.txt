@@ -1,0 +1,4 @@
+Pandas version: 2.2.2
+Seaborn version: 0.13.2
+Matplotlib version: 3.8.4
+Scipy version: 1.13.1
