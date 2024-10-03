@@ -30,7 +30,13 @@ Proses penyewaan sepeda dipengaruhi oleh faktor lingkungan dan musiman seperti c
 
 # Cara menjalankan proyek ini
 1. Clone Repositori ini
+`https://github.com/agusputrawan/bike-share-analysis.git`
 2. Install library yang diperlukan, contoh terdapat dalam requirement.txt
+   `pip install -r requirements.txt`
 3. Masuk kedalam folder dashboard
-4. Jalankan dengan streamlit
+   `cd dashboard`
+5. Jalankan dengan streamlit
+   `streamlit run dashboard.py`
+*atau kamu bisa mengunjungi website ini
+[https://bike-share-analysis-mdz8xpzih6dpjstkrhlmhx.streamlit.app/]
 
