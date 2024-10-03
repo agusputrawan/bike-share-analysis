@@ -37,6 +37,6 @@ Proses penyewaan sepeda dipengaruhi oleh faktor lingkungan dan musiman seperti c
    `cd dashboard`
 5. Jalankan dengan streamlit
    `streamlit run dashboard.py`
-*atau kamu bisa mengunjungi website ini
-*[https://bike-share-analysis-mdz8xpzih6dpjstkrhlmhx.streamlit.app/]
+#atau kamu bisa mengunjungi website ini
+#[https://bike-share-analysis-mdz8xpzih6dpjstkrhlmhx.streamlit.app/]
 
