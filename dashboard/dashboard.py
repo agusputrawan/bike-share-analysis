@@ -62,11 +62,6 @@ st.pyplot(plt)
 correlation_temp_rentals = day_df['temperatur'].corr(day_df['user_total'])
 st.write(f"Korelasi antara Temperatur dan Jumlah Penyewaan: {correlation_temp_rentals}")
 
-# Regresi Linear
-X = day_df['temperatur']
-y = day_df['user_total']
-X = sm.add_constant(X)
-model = sm.OLS(y, X).fit()
 
 st.subheader("Hasil Regresi Linear")
 st.write("""
