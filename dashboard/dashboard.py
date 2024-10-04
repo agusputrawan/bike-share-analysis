@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy import stats
@@ -97,8 +98,13 @@ st.pyplot(plt)
 
 # Analisis Varians (ANOVA)
 groups = [group['user_total'].values for name, group in filtered_data.groupby('musim')]
-f_statistic, p_value = stats.f_oneway(*groups)
-st.write(f'F-statistic: {f_statistic}, p-value: {p_value}')
+
+# Memastikan ada setidaknya dua grup untuk ANOVA
+if len(groups) < 2:
+    st.write("Tidak cukup grup untuk analisis ANOVA.")
+else:
+    f_statistic, p_value = stats.f_oneway(*groups)
+    st.write(f'F-statistic: {f_statistic}, p-value: {p_value}')
 
 # Kesimpulan
 st.header("Kesimpulan")
