@@ -7,8 +7,8 @@ from scipy import stats
 
 
 # Memasukkan file CSV
-script_dir = os.path.dirname(os.path.realpath(__file__))
-df= pd.read_csv(f"{script_dir}/main_data.csv")
+file_path = "dashboard/main_data.csv"
+day_df = pd.read_csv(file_path)
 
 # Konversi kolom 'tanggal' menjadi datetime
 day_df['tanggal'] = pd.to_datetime(day_df['tanggal'])
@@ -31,9 +31,9 @@ start_date, end_date = st.sidebar.date_input(
 # Filter data berdasarkan tanggal yang dipilih
 filtered_data = day_df[(day_df['tanggal'] >= pd.to_datetime(start_date)) & (day_df['tanggal'] <= pd.to_datetime(end_date))]
 
-# with st.sidebar:
-#     # Menambah logo
-#     st.image("dashboard/Bike_rental.jpg")
+with st.sidebar:
+    # Menambah logo
+    st.image("dashboard/Bike_rental.jpg")
 
 # Judul
 st.title("Dashboard Penyewaan Sepeda:sparkles:")
