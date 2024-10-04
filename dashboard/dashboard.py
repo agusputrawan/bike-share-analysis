@@ -6,9 +6,12 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 
-# Memasukkan file CSV
-file_path = "main_data.csv"
-day_df = pd.read_csv(file_path)
+# # Memasukkan file CSV
+# file_path = "main_data.csv"
+# day_df = pd.read_csv(file_path)
+
+filepath = os.path.join(os.path.dirname(_file), '../dashboard/main_data.csv')
+df = pd.read_csv(file_path)
 
 # Konversi kolom 'tanggal' menjadi datetime
 day_df['tanggal'] = pd.to_datetime(day_df['tanggal'])
