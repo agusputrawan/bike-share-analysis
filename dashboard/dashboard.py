@@ -31,9 +31,9 @@ start_date, end_date = st.sidebar.date_input(
 # Filter data berdasarkan tanggal yang dipilih
 filtered_data = day_df[(day_df['tanggal'] >= pd.to_datetime(start_date)) & (day_df['tanggal'] <= pd.to_datetime(end_date))]
 
-with st.sidebar:
-    # Menambah logo
-    st.image("dashboard/Bike_rental.jpg")
+# with st.sidebar:
+#     # Menambah logo
+#     st.image("dashboard/Bike_rental.jpg")
 
 # Judul
 st.title("Dashboard Penyewaan Sepeda:sparkles:")
