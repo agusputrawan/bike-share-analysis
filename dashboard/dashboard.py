@@ -96,25 +96,12 @@ plt.xlabel('Musim')
 plt.ylabel('Jumlah Penyewaan Sepeda')
 st.pyplot(plt)
 
-# Analisis Varians (ANOVA)
-groups = [group['user_total'].values for name, group in filtered_data.groupby('musim')]
-
-# Memastikan ada setidaknya dua grup untuk ANOVA
-if len(groups) < 2:
-    st.write("Tidak cukup grup untuk analisis ANOVA.")
-else:
-    f_statistic, p_value = stats.f_oneway(*groups)
-    st.write(f'F-statistic: {f_statistic}, p-value: {p_value}')
-
 # Kesimpulan
 st.header("Kesimpulan")
 st.write("""
 - Terdapat hubungan positif yang kuat antara temperatur dan jumlah penyewaan sepeda (korelasi 0.63). 
 - Setiap kenaikan satu unit suhu, jumlah penyewaan meningkat rata-rata 6640 unit, dengan R-squared 0.39, 
   menunjukkan suhu berpengaruh signifikan terhadap penyewaan sepeda.
-  
-- Variasi musiman mempengaruhi jumlah penyewaan sepeda, dengan F-statistic 128.77 dan p-value < 0.001, 
-  menunjukkan perbedaan signifikan antara musim.
 """)
 
 # Saran
