@@ -4,7 +4,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy import stats
-
+import statsmodels.api as sm
 
 # Memasukkan file CSV
 file_path = "dashboard/main_data.csv"
@@ -77,24 +77,21 @@ correlation_temp_rentals = filtered_data['temperatur'].corr(filtered_data['user_
 st.write(f"Korelasi antara Temperatur dan Jumlah Penyewaan: {correlation_temp_rentals}")
 
 # Hasil Regresi Linear
-st.subheader("Hasil Regresi Linear")
-st.write("""
-- Koefisien Intersep: 1214.64
-- Koefisien Temperatur: 6640.71
-- R-squared: 0.394
-- F-statistic: 473.5
-- Prob (F-statistic): 2.81e-81
-""")
+X = filtered_data['temperatur']
+y = filtered_data['user_total']
+X = sm.add_constant(X)  # Tambah konstanta untuk intersep
+model = sm.OLS(y, X).fit()  # Fit model regresi
+intercept = model.params[0]
+coef_temperature = model.params[1]
+r_squared = model.rsquared
 
-# Visualisasi Jumlah Penyewaan per Musim
-st.header("Jumlah Penyewaan Sepeda per Musim")
-seasonal_rentals = filtered_data.groupby('musim')['user_total'].sum().reset_index()
-plt.figure(figsize=(10, 6))
-sns.barplot(data=seasonal_rentals, x='musim', y='user_total')
-plt.title('Jumlah Penyewaan Sepeda per Musim')
-plt.xlabel('Musim')
-plt.ylabel('Jumlah Penyewaan Sepeda')
-st.pyplot(plt)
+# Menampilkan hasil regresi
+st.subheader("Hasil Regresi Linear")
+st.write(f"""
+- Koefisien Intersep: {intercept:.2f}
+- Koefisien Temperatur: {coef_temperature:.2f}
+- R-squared: {r_squared:.2f}
+""")
 
 # Kesimpulan
 st.header("Kesimpulan")
@@ -106,7 +103,7 @@ st.write(f"""
 
 # Saran
 st.header("Saran")
-st.write("""
+st.write(""" 
 1. Sesuaikan strategi pemasaran untuk hari dengan temperatur tinggi.
 2. Kembangkan produk musiman sesuai dengan pola penyewaan.
 3. Pantau data cuaca untuk prediksi tren penyewaan.
