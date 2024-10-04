@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 # Memasukkan file CSV
-file_path = "dashboard/main_data.csv"
+file_path = "main_data.csv"
 day_df = pd.read_csv(file_path)
 
 # Konversi kolom 'tanggal' menjadi datetime
@@ -19,7 +19,7 @@ date_filter = st.sidebar.date_input("Pilih Tanggal", min_date)
 
 with st.sidebar:
     # Menambahkan logo
-    st.image("dashboard/Bike_rental.jpg")
+    st.image("Bike_rental.jpg")
 
 # Filter data berdasarkan tanggal 
 filtered_data = day_df[day_df['tanggal'] == pd.to_datetime(date_filter)]
