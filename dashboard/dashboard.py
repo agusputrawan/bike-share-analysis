@@ -97,12 +97,23 @@ plt.ylabel('Jumlah Penyewaan Sepeda')
 st.pyplot(plt)
 
 # Kesimpulan
+# Kesimpulan
 st.header("Kesimpulan")
-st.write(f"""
-- Terdapat hubungan positif yang kuat antara temperatur dan jumlah penyewaan sepeda (korelasi {correlation_temp_rentals:.2f}). 
-- Setiap kenaikan satu unit suhu, jumlah penyewaan meningkat rata-rata {coef_temperature:.2f} unit, dengan R-squared {r_squared:.2f}, 
+st.write("""
+- Terdapat hubungan positif yang kuat antara temperatur dan jumlah penyewaan sepeda dalam rentang waktu 2011/01/01 – 2012/12/31 dengan hasil (korelasi 0.63). 
+- Di dalam rentang waktu 2011/01/01 – 2012/12/31 untuk setiap kenaikan satu unit suhu, jumlah penyewaan meningkat rata-rata 6640 unit, dengan R-squared 0.39, 
   menunjukkan suhu berpengaruh signifikan terhadap penyewaan sepeda.
 """)
+
+# Saran
+st.header("Saran")
+st.write("""
+1. Sesuaikan strategi pemasaran untuk hari dengan temperatur tinggi.
+2. Kembangkan produk musiman sesuai dengan pola penyewaan.
+3. Pantau data cuaca untuk prediksi tren penyewaan.
+""")
+
+st.caption(f"Copyright © 2024 All Rights Reserved [Putu Agus Putrawan](https://www.linkedin.com/in/putu-agus-putrawan/)")
 
 # Saran
 st.header("Saran")
