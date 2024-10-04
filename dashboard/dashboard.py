@@ -33,16 +33,6 @@ filtered_data = day_df[(day_df['tanggal'] >= pd.to_datetime(start_date)) & (day_
 # Judul
 st.title("Dashboard Penyewaan Sepeda:sparkles:")
 
-# Menampilkan total pengguna 
-total_casual_users = filtered_data['user_kasual'].sum()
-total_registered_users = filtered_data['user_terdaftar'].sum()
-total_users = filtered_data['user_total'].sum()
-
-st.header("Informasi Pengguna Hari Ini")
-st.write(f"Total Pengguna Kasual: {total_casual_users}")
-st.write(f"Total Pengguna Terdaftar: {total_registered_users}")
-st.write(f"Total Pengguna: {total_users}")
-
 # User perhari
 st.subheader('Jumlah Pengguna Harian')
 col1, col2, col3 = st.columns(3)
