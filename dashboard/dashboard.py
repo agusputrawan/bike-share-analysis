@@ -21,7 +21,10 @@ st.sidebar.header("Filter Data")
 min_date = day_df['tanggal'].min()
 max_date = day_df['tanggal'].max()
 
-# Membuat komponen filter
+with st.sidebar:
+    # Menambah logo
+    st.image("dashboard/Bike_rental.png")
+
 start_date, end_date = st.sidebar.date_input(
     label='Range of Time', 
     min_value=min_date,
@@ -104,16 +107,6 @@ st.write("""
 - Di dalam rentang waktu 2011/01/01 – 2012/12/31 untuk setiap kenaikan satu unit suhu, jumlah penyewaan meningkat rata-rata 6640 unit, dengan R-squared 0.39, 
   menunjukkan suhu berpengaruh signifikan terhadap penyewaan sepeda.
 """)
-
-# Saran
-st.header("Saran")
-st.write("""
-1. Sesuaikan strategi pemasaran untuk hari dengan temperatur tinggi.
-2. Kembangkan produk musiman sesuai dengan pola penyewaan.
-3. Pantau data cuaca untuk prediksi tren penyewaan.
-""")
-
-st.caption(f"Copyright © 2024 All Rights Reserved [Putu Agus Putrawan](https://www.linkedin.com/in/putu-agus-putrawan/)")
 
 # Saran
 st.header("Saran")
