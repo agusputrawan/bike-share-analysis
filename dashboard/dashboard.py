@@ -100,7 +100,6 @@ plt.ylabel('Jumlah Penyewaan Sepeda')
 st.pyplot(plt)
 
 # Kesimpulan
-# Kesimpulan
 st.header("Kesimpulan")
 st.write("""
 - Terdapat hubungan positif yang kuat antara temperatur dan jumlah penyewaan sepeda dalam rentang waktu 2011/01/01 – 2012/12/31 dengan hasil (korelasi 0.63). 
