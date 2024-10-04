@@ -3,6 +3,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy import stats
+import statsmodels.api as sm
 
 # Memasukkan file CSV
 file_path = "dashboard/main_data.csv"
