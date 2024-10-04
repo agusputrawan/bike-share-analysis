@@ -98,9 +98,9 @@ st.pyplot(plt)
 
 # Kesimpulan
 st.header("Kesimpulan")
-st.write("""
-- Terdapat hubungan positif yang kuat antara temperatur dan jumlah penyewaan sepeda (korelasi 0.63). 
-- Setiap kenaikan satu unit suhu, jumlah penyewaan meningkat rata-rata 6640 unit, dengan R-squared 0.39, 
+st.write(f"""
+- Terdapat hubungan positif yang kuat antara temperatur dan jumlah penyewaan sepeda (korelasi {correlation_temp_rentals:.2f}). 
+- Setiap kenaikan satu unit suhu, jumlah penyewaan meningkat rata-rata {coef_temperature:.2f} unit, dengan R-squared {r_squared:.2f}, 
   menunjukkan suhu berpengaruh signifikan terhadap penyewaan sepeda.
 """)
 
