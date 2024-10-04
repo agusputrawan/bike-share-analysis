@@ -23,7 +23,7 @@ max_date = day_df['tanggal'].max()
 
 with st.sidebar:
     # Menambah logo
-    st.image("dashboard/Bike_rental.png")
+    st.image("dashboard/Bike_rental.jpg")
 
 start_date, end_date = st.sidebar.date_input(
     label='Range of Time', 
