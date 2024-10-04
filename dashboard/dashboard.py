@@ -44,15 +44,15 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     total_casual = filtered_data['user_kasual'].sum()
-    st.metric("Total Casual User", value=f'{total_casual:,}')
+    st.metric("Total Pengguna Kasual", value=f'{total_casual:,}')
 
 with col2:
     total_registered = filtered_data['user_terdaftar'].sum()
-    st.metric("Total Registered User", value=f'{total_registered:,}')
+    st.metric("Total Pengguna Terdaftar", value=f'{total_registered:,}')
 
 with col3:
     total_users = filtered_data['user_total'].sum()
-    st.metric("Total Users", value=f'{total_users:,}')
+    st.metric("Total Pengguna", value=f'{total_users:,}')
 
 # Visualisasi Jumlah Pengguna Kasual dan Terdaftar per Hari
 st.header("Jumlah Pengguna Kasual dan Terdaftar per Hari")
